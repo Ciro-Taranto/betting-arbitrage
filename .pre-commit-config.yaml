@@ -58,6 +58,6 @@ repos:
     hooks:
     -   id: system
         name: PyLint
-        entry: /home/ctaranto/anaconda3/bin/pylint  # use local pylint in virtual environment
+        entry: /home/andreeas/anaconda3/envs/sport-betting/bin/pylint  # use local pylint in virtual environment
         language: system
         files: \.py$

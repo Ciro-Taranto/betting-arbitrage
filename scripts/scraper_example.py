@@ -1,6 +1,12 @@
-from selenium import webdriver
-import pandas as pd
+from betting_agent.parsing.parser import Parser
 
-driver = webdriver.Chrome("/home/ctaranto/Projects/product_scraper/chromedriver")
+SHELF_LOCATION = "/home/andreeas/Shelves/betting"
 
-driver.get('https://forums.edmunds.com/discussion/2864/general/x/entry-level-luxury-performance-sedans/p702')
+matchpoint_parser = Parser.get_matchpoint_parser(shelf_location=SHELF_LOCATION)
+print(matchpoint_parser.parse())
+
+eurobet_parser = Parser.get_eurobet_parser(shelf_location=SHELF_LOCATION, debug=True)
+print(eurobet_parser.parse())
+
+bwin_parser = Parser.get_bwin_parser(shelf_location=SHELF_LOCATION, debug=True)
+print(bwin_parser.parse())
